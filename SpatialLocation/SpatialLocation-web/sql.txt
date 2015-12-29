@@ -1,0 +1,18 @@
+CREATE TABLE geo_location
+( id serial PRIMARY KEY,
+  city varchar(110),
+  state_province varchar(25),
+  country varchar(110)
+);
+
+CREATE TABLE geo_coordinate
+( id serial PRIMARY KEY,
+  location_id int references geo_location(id),
+  longitude float,
+  latitude float
+);
+
+CREATE TABLE geo_zip_codes
+( zipcode float PRIMARY KEY,
+  location_id int references geo_location(id)
+);
