@@ -1,0 +1,3 @@
+com\geo\entity\Location.class
+com\geo\entity\ZipCode.class
+com\geo\entity\Coordinate.class
