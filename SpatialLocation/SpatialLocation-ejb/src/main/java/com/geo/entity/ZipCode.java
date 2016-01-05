@@ -6,6 +6,7 @@
 package com.geo.entity;
 
 import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -19,5 +20,36 @@ import javax.persistence.Table;
 public class ZipCode implements Serializable {
 
     @Id
-    private int zipcode;
+    @Column(name = "zipcode")
+    private long zipcode;
+    @Column(name = "location_id")
+    private long locationId;
+
+    /**
+     * @return the zipcode
+     */
+    public long getZipcode() {
+        return zipcode;
+    }
+
+    /**
+     * @param zipcode the zipcode to set
+     */
+    public void setZipcode(long zipcode) {
+        this.zipcode = zipcode;
+    }
+
+    /**
+     * @return the locationId
+     */
+    public long getLocationId() {
+        return locationId;
+    }
+
+    /**
+     * @param locationId the locationId to set
+     */
+    public void setLocationId(long locationId) {
+        this.locationId = locationId;
+    }
 }
