@@ -1,3 +1,5 @@
 com\geo\entity\Location.class
-com\geo\entity\ZipCode.class
 com\geo\entity\Coordinate.class
+com\geo\ejb\TestEJB.class
+com\geo\entity\ZipCode.class
+com\geo\hibernate\util\HibernateUtil.class
