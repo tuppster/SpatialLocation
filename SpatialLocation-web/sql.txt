@@ -17,4 +17,3 @@ CREATE TABLE geo_zip_codes
   location_id int references geo_location(id)
 );
 
-test
