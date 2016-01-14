@@ -16,3 +16,5 @@ CREATE TABLE geo_zip_codes
 ( zipcode float PRIMARY KEY,
   location_id int references geo_location(id)
 );
+
+test
