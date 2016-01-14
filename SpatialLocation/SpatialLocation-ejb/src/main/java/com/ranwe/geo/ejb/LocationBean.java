@@ -20,33 +20,50 @@ import javax.persistence.PersistenceException;
 @Stateless
 @LocalBean
 public class LocationBean {
-    
+
     static Logger log = Logger.getLogger(LocationBean.class.getName());
-    
+    private Boolean isSuccess;
+
     @PersistenceContext
     EntityManager em;
-    
-    public Location getResult(Long id) {
+
+    public Location getLocation(Long id) {
         Location result = null;
 
         try {
             result = em.find(Location.class, id);
-            log.info("getResult success");
+            log.info("getLocation success");
+            System.out.println("test git ignore");
         } catch (PersistenceException e) {
-            log.warn("getResult" + e);
+            log.warn("getLocation" + e);
         }
-
         return result;
     }
-    
-    public void postLocation(Location location) {
+
+    public boolean postLocation(Location location) {
         
         try {
             em.persist(location);
-            log.info("postLocation success");
+            isSuccess = true;
+            log.info("postLocation" + isSuccess);
         } catch (PersistenceException e) {
-            log.warn("getResult" + e);
+            log.warn("postLocation"+ isSuccess + e);
         }
+        
+        return isSuccess;
     }
-    
+
+    public boolean deleteLocation(Location location) {
+
+        try {
+            em.remove(location);
+            isSuccess = true;
+            log.info("deleteLocation success");
+        } catch (PersistenceException e) {
+            log.warn("deleteLocation: " + isSuccess + e);
+        }
+        
+        return isSuccess;
+    }
+
 }
