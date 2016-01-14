@@ -25,7 +25,7 @@ public class LocationBeanHandler implements Serializable {
     transient LocationBean testEJB;
 
     public Location getLocation() {
-        return testEJB.getResult((long) 1);
+        return testEJB.getLocation((long) 1);
 
     }
     
